@@ -37,11 +37,11 @@ int main(){
         printf("\n***************************************");
         printf("\nDigite 1 para Cadastro");
         printf("\nDigite 2 para Projetos Cadastrados");
-        printf("\nDigite 3 para Pesquisar por CÛdigo");
+        printf("\nDigite 3 para Pesquisar por C√≥digo");
         printf("\nDigite 4 para Pesquisar por Gerente");
         printf("\nDigite 5 para Projetos com status - A Fazer");
         printf("\nDigite 6 para Projetos com status - Fazendo");
-        printf("\nDigite 7 para Projetos com status - ConcluÌdo");
+        printf("\nDigite 7 para Projetos com status - Conclu√≠do");
         printf("\nDigite 0 para Sair");
         printf("\n***************************************\n");
         fflush(stdin);
@@ -56,7 +56,7 @@ int main(){
                 projetoscadastrados(cadastro);
             break;
             case 3:
-                printf("PESQUISA POR C”DIGO\n");
+                printf("PESQUISA POR C√ìDIGO\n");
                 pesquisaporcodigo(cadastro);
             break;
             case 4:
@@ -72,7 +72,7 @@ int main(){
                 pesquisa_fazendo(cadastro);
             break;
             case 7:
-                printf("PESQUISA POR STATUS - CONCLUÕDO\n");
+                printf("PESQUISA POR STATUS - CONCLU√çDO\n");
                 pesquisa_concluido(cadastro);
             break;
             case 0:
@@ -80,7 +80,7 @@ int main(){
                 system("pause");
             break;
             default:
-                printf("OP«√O INV¡LIDA\n");
+                printf("OP√á√ÉO INV√ÅLIDA\n");
             break;
         }
     } while (selecione != 0);
@@ -89,60 +89,60 @@ return 0;
 //*CADASTRO DE PROJETOS//
 void cadastrarprojeto(base_projetos cadastro[MAX]){
 	system("cls");
-    int stat, i;
+    	int stat, i;
 	char resposta = 's';
 	while(resposta== 's' || resposta== 'S' && posicao <= MAX){
 		posicao++;
-		printf("\nCÛdigo:%d ", posicao);
+		printf("\nC√≥digo:%d ", posicao);
 		cadastro[posicao].codigo = posicao;
 		printf("\nDigite o ano do projeto:");
 		fflush(stdin);
 		scanf("%d", &cadastro[posicao].ano);
-        printf("\nInforme a quantidade de funcion·rios para o projeto:");
-        fflush(stdin);
-        scanf("%d", &cadastro[posicao].qtdfuncionarios);
-        printf("\nInforme o orÁamento para o projeto:");
-        fflush(stdin);
-        scanf("%f", &cadastro[posicao].orcamento);
-        printf("\nInforme o nome do Cliente:");
-        fflush(stdin);
-        gets(cadastro[posicao].cliente); 
-        i=0;
-        while(i==0){
-            printf("\nQual o status do projeto?: [1]A fazer [2]Fazendo [3]ConcluÌdo:");
-            fflush(stdin);
-            scanf("%d", &stat);
-            if (stat==1){
-                cadastro[posicao].status = 1;
-                i++;
-            }if (stat==2){
-                cadastro[posicao].status = 2;
-                i++;
-            }if (stat==3){
-                cadastro[posicao].status = 3;
-                i++;
-            }else if (stat<=0 || stat>=4){
-                printf("\nOP«√O INV¡LIDA"); 
-            }  
-        }
-        printf("\nInforme o titulo do projeto:");
-        fflush(stdin);
-        gets(cadastro[posicao].titulo);
-        printf("\nInforme uma descriÁ„o para o projeto:");
-        fflush(stdin);
-        gets(cadastro[posicao].descricao);
-        printf("\nInforme o nome do Gerente:");
-        fflush(stdin);
-        gets(cadastro[posicao].gerente);  
-        if (posicao < MAX){
-            printf("\nDeseja Cadastrar um novo projeto? [s] SIM [n] NAO:");
-            fflush(stdin);
-            scanf("%c", &resposta);
-            system("cls");
-        }else{
-            printf("\nSua base de dados j· est· cheia");
-            resposta = 'n';
-        }       
+        	printf("\nInforme a quantidade de funcion√°rios para o projeto:");
+		fflush(stdin);
+		scanf("%d", &cadastro[posicao].qtdfuncionarios);
+		printf("\nInforme o or√ßamento para o projeto:");
+		fflush(stdin);
+		scanf("%f", &cadastro[posicao].orcamento);
+		printf("\nInforme o nome do Cliente:");
+		fflush(stdin);
+		gets(cadastro[posicao].cliente); 
+		i=0;
+		while(i==0){
+		    printf("\nQual o status do projeto?: [1]A fazer [2]Fazendo [3]Conclu√≠do:");
+		    fflush(stdin);
+		    scanf("%d", &stat);
+		    if (stat==1){
+			cadastro[posicao].status = 1;
+			i++;
+		    }if (stat==2){
+			cadastro[posicao].status = 2;
+			i++;
+		    }if (stat==3){
+			cadastro[posicao].status = 3;
+			i++;
+		    }else if (stat<=0 || stat>=4){
+			printf("\nOP√á√ÉO INV√ÅLIDA"); 
+		    }  
+		}
+		printf("\nInforme o titulo do projeto:");
+		fflush(stdin);
+		gets(cadastro[posicao].titulo);
+		printf("\nInforme uma descri√ß√£o para o projeto:");
+		fflush(stdin);
+		gets(cadastro[posicao].descricao);
+		printf("\nInforme o nome do Gerente:");
+		fflush(stdin);
+		gets(cadastro[posicao].gerente);  
+		if (posicao < MAX){
+		    printf("\nDeseja Cadastrar um novo projeto? [s] SIM [n] NAO:");
+		    fflush(stdin);
+		    scanf("%c", &resposta);
+		    system("cls");
+		}else{
+		    printf("\nSua base de dados j√° est√° cheia");
+		    resposta = 'n';
+		}       
 	}
 }
 //*LISTA DE PROJETOS CADASTRADOS//
@@ -154,7 +154,7 @@ void projetoscadastrados(base_projetos cadastro[MAX]){
     int y =1;
     if (posicao>=1){
         while (y <=posicao){
-            printf("\nCÛdigo: %d\nAno: %d\nQuantidade de Funcion·rios: %d\nOrÁamento: %.2f\n", 
+            printf("\nC√≥digo: %d\nAno: %d\nQuantidade de Funcion√°rios: %d\nOr√ßamento: %.2f\n", 
             cadastro[y].codigo, cadastro[y].ano, cadastro[y].qtdfuncionarios, cadastro[y].orcamento);
             if (cadastro[y].status == 1)
             {
@@ -166,7 +166,7 @@ void projetoscadastrados(base_projetos cadastro[MAX]){
             {
                 printf("Status: Concluido\n");
             }   
-            printf("Cliente: %s\nTitulo: %s\nDescriÁ„o: %s\nGerente: %s\n",
+            printf("Cliente: %s\nTitulo: %s\nDescri√ß√£o: %s\nGerente: %s\n",
             cadastro[y].cliente, cadastro[y].titulo, cadastro[y].descricao,cadastro[y].gerente);
             y++;
         }
@@ -175,20 +175,20 @@ void projetoscadastrados(base_projetos cadastro[MAX]){
     }
     system("pause");
 }
-//*PESQUISA POR C”DIGO//
+//*PESQUISA POR C√ìDIGO//
 void pesquisaporcodigo(base_projetos cadastro[MAX]){
     system("cls");
     int codigo, achou;
     printf("\n***************************************");
     printf("\nPESQUISA DE PROJETOS");
     printf("\n***************************************\n");
-    printf("\nDigite o cÛdigo do projeto:");
+    printf("\nDigite o c√≥digo do projeto:");
     scanf("%d", &codigo);
     achou =0;
     int x =0;
     while ((achou == 0) && (x <=posicao)){
         if (codigo== cadastro[x].codigo){
-            printf("\nCÛdigo: %d\nAno: %d\nQuantidade de Funcion·rios: %d\nOrÁamento: %.2f\n",
+            printf("\nC√≥digo: %d\nAno: %d\nQuantidade de Funcion√°rios: %d\nOr√ßamento: %.2f\n",
             cadastro[x].codigo, cadastro[x].ano, cadastro[x].qtdfuncionarios, cadastro[x].orcamento);
             if (cadastro[x].status == 1)
             {
@@ -200,7 +200,7 @@ void pesquisaporcodigo(base_projetos cadastro[MAX]){
             {
                 printf("Status: Concluido\n");
             }   
-            printf("Cliente: %s\nTitulo: %s\nDescriÁ„o: %s\nGerente: %s\n",
+            printf("Cliente: %s\nTitulo: %s\nDescri√ß√£o: %s\nGerente: %s\n",
             cadastro[x].cliente, cadastro[x].titulo, cadastro[x].descricao,cadastro[x].gerente);
             achou = 1;
             system("pause");
@@ -208,7 +208,7 @@ void pesquisaporcodigo(base_projetos cadastro[MAX]){
         x++;
     }
     if (achou==0){
-    printf("\nNENHUM PROJETO ENCONTRADO COM ESTE C”DIGO\n");
+    printf("\nNENHUM PROJETO ENCONTRADO COM ESTE C√ìDIGO\n");
     system("pause");
     }   
 } 
@@ -220,14 +220,14 @@ void pesquisaporgerente(base_projetos cadastro[MAX]){
     printf("\n***************************************");
     printf("\nPESQUISA POR GERENTE");
     printf("\n***************************************\n");
-    printf("\nDigite o nome do Gerente(idÍntico ao cadastrado):");
+    printf("\nDigite o nome do Gerente(id√™ntico ao cadastrado):");
     fflush(stdin);
     gets(nomegerente);
     achar=0;
     z=0;
     while ((achar==0) && (z < MAX)){
         if (strcmp(cadastro[z].gerente, nomegerente)==0){
-            printf("\nCÛdigo: %d\nAno: %d\nQuantidade de Funcion·rios: %d\nOrÁamento: %.2f\n",
+            printf("\nC√≥digo: %d\nAno: %d\nQuantidade de Funcion√°rios: %d\nOr√ßamento: %.2f\n",
             cadastro[z].codigo, cadastro[z].ano, cadastro[z].qtdfuncionarios, cadastro[z].orcamento);
             if (cadastro[z].status == 1)
             {
@@ -237,9 +237,9 @@ void pesquisaporgerente(base_projetos cadastro[MAX]){
                 printf("Status: Fazendo\n");
             }else if (cadastro[z].status == 3)
             {
-                printf("Status: ConcluÌdo\n");
+                printf("Status: Conclu√≠do\n");
             }   
-            printf("Cliente: %s\nTitulo: %s\nDescriÁ„o: %s\nGerente: %s\n",
+            printf("Cliente: %s\nTitulo: %s\nDescri√ß√£o: %s\nGerente: %s\n",
             cadastro[z].cliente, cadastro[z].titulo, cadastro[z].descricao,cadastro[z].gerente);
             achar = 1;
             system("pause");
@@ -265,9 +265,9 @@ void pesquisa_afazer(base_projetos cadastro[MAX]){
         {
             if (cadastro[a].status==1)
             {
-                printf("\nCÛdigo: %d\nAno: %d\nQuantidade de Funcion·rios: %d\nOrÁamento: %.2f\n",
+                printf("\nC√≥digo: %d\nAno: %d\nQuantidade de Funcion√°rios: %d\nOr√ßamento: %.2f\n",
                 cadastro[a].codigo, cadastro[a].ano, cadastro[a].qtdfuncionarios, cadastro[a].orcamento);
-                printf("Cliente: %s\nTitulo: %s\nDescriÁ„o: %s\nGerente: %s\n",
+                printf("Cliente: %s\nTitulo: %s\nDescri√ß√£o: %s\nGerente: %s\n",
                 cadastro[a].cliente, cadastro[a].titulo, cadastro[a].descricao,cadastro[a].gerente);
                 cont++;  
             }
@@ -293,9 +293,9 @@ void pesquisa_fazendo(base_projetos cadastro[MAX]){
         {
             if (cadastro[b].status==2)
             {
-                printf("\nCÛdigo: %d\nAno: %d\nQuantidade de Funcion·rios: %d\nOrÁamento: %.2f\n",
+                printf("\nC√≥digo: %d\nAno: %d\nQuantidade de Funcion√°rios: %d\nOr√ßamento: %.2f\n",
                 cadastro[b].codigo, cadastro[b].ano, cadastro[b].qtdfuncionarios, cadastro[b].orcamento);
-                printf("Cliente: %s\nTitulo: %s\nDescriÁ„o: %s\nGerente: %s\n",
+                printf("Cliente: %s\nTitulo: %s\nDescri√ß√£o: %s\nGerente: %s\n",
                 cadastro[b].cliente, cadastro[b].titulo, cadastro[b].descricao,cadastro[b].gerente);
                 cont++;  
             }
@@ -307,11 +307,11 @@ void pesquisa_fazendo(base_projetos cadastro[MAX]){
     }
 system("pause");          
 }
-//*PROJETOS COM STATUS - CONCLUÕDO//
+//*PROJETOS COM STATUS - CONCLU√çDO//
 void pesquisa_concluido(base_projetos cadastro[MAX]){
     system("cls");
     printf("\n***************************************");
-    printf("\n PROJETOS CONCLUÕDOS");
+    printf("\n PROJETOS CONCLU√çDOS");
     printf("\n***************************************\n");
     int cont=0;
     int c=0;
@@ -321,9 +321,9 @@ void pesquisa_concluido(base_projetos cadastro[MAX]){
         {
             if (cadastro[c].status==3)
             {
-                printf("\nCÛdigo: %d\nAno: %d\nQuantidade de Funcion·rios: %d\nOrÁamento: %.2f\n",
+                printf("\nC√≥digo: %d\nAno: %d\nQuantidade de Funcion√°rios: %d\nOr√ßamento: %.2f\n",
                 cadastro[c].codigo, cadastro[c].ano, cadastro[c].qtdfuncionarios, cadastro[c].orcamento);
-                printf("Cliente: %s\nTitulo: %s\nDescriÁ„o: %s\nGerente: %s\n",
+                printf("Cliente: %s\nTitulo: %s\nDescri√ß√£o: %s\nGerente: %s\n",
                 cadastro[c].cliente, cadastro[c].titulo, cadastro[c].descricao,cadastro[c].gerente);
                 cont++;  
             }
@@ -331,7 +331,7 @@ void pesquisa_concluido(base_projetos cadastro[MAX]){
         }
     }
     if ((cont==0) && (cont<=MAX)){
-        printf("\nNENHUM PROJETO COM STATUS - CONCLUÕDO - ENCONTRADO\n"); 
+        printf("\nNENHUM PROJETO COM STATUS - CONCLU√çDO - ENCONTRADO\n"); 
     }
 system("pause");             
 }
