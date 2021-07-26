@@ -133,8 +133,7 @@ void cadastrarprojeto(base_projetos cadastro[MAX]){
         gets(cadastro[posicao].descricao);
         printf("\nInforme o nome do Gerente:");
         fflush(stdin);
-        gets(cadastro[posicao].gerente);
-   
+        gets(cadastro[posicao].gerente);  
         if (posicao < MAX){
             printf("\nDeseja Cadastrar um novo projeto? [s] SIM [n] NAO:");
             fflush(stdin);
